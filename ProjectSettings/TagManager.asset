@@ -44,11 +44,26 @@ TagManager:
   - name: Background
     uniqueID: 1310984083
     locked: 0
+  - name: 1Sky
+    uniqueID: 2690592593
+    locked: 0
+  - name: 2Cloud
+    uniqueID: 3995913375
+    locked: 0
+  - name: 3Backround
+    uniqueID: 561338989
+    locked: 0
   - name: Platforms
     uniqueID: 1377050011
     locked: 0
   - name: Player
     uniqueID: 1088266697
+    locked: 0
+  - name: 4Foreground
+    uniqueID: 3733796823
+    locked: 0
+  - name: Light
+    uniqueID: 2134467317
     locked: 0
   m_RenderingLayers:
   - Default
