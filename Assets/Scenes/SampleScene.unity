@@ -3166,7 +3166,7 @@ GameObject:
   - component: {fileID: 306470474}
   - component: {fileID: 306470473}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3398,7 +3398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   rb: {fileID: 413841878}
   moveSpeed: 8
-  jumpForce: 9
+  jumpForce: 6
   groundCheck: {fileID: 118745625}
   groundLayer:
     serializedVersion: 2
@@ -3570,8 +3570,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.14851844, y: 0.011423111}
-  m_Size: {x: 0.6057503, y: 1.9529648}
+  m_Offset: {x: 0.15, y: 0.05}
+  m_Size: {x: 0.605, y: 1.8775}
   m_Direction: 0
 --- !u!1 &520232131
 GameObject:
@@ -3722,7 +3722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 937870398}
+  m_Father: {fileID: 1517745043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &621286726
 TilemapCollider2D:
@@ -4473,7 +4473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 937870398}
+  m_Father: {fileID: 1517745043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &738800945
 TilemapRenderer:
@@ -14024,7 +14024,7 @@ GameObject:
   - component: {fileID: 937870398}
   - component: {fileID: 937870397}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: BG Assets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14059,9 +14059,6 @@ Transform:
   - {fileID: 1411953960}
   - {fileID: 167006753}
   - {fileID: 1090105948}
-  - {fileID: 738800944}
-  - {fileID: 621286725}
-  - {fileID: 1902385548}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090105947
@@ -19476,6 +19473,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1517745041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517745043}
+  - component: {fileID: 1517745042}
+  m_Layer: 0
+  m_Name: Platform Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!156049354 &1517745042
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517745041}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!4 &1517745043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517745041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 738800944}
+  - {fileID: 621286725}
+  - {fileID: 1902385548}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902385547
 GameObject:
   m_ObjectHideFlags: 0
@@ -19510,7 +19554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 937870398}
+  m_Father: {fileID: 1517745043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1902385549
 TilemapRenderer:
@@ -20150,5 +20194,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 520232132}
   - {fileID: 937870398}
+  - {fileID: 1517745043}
   - {fileID: 413841880}
   - {fileID: 306470475}
