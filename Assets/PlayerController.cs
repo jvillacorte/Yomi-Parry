@@ -24,11 +24,18 @@ public class PlayerController : MonoBehaviour
 
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-            // Set animator parameters for blend trees
-            _animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
-            _animator.SetFloat("yVelocity", rb.linearVelocity.y);
-            _animator.SetBool("isJumping", !isGrounded);
-            _animator.SetBool("isRunning", Mathf.Abs(horizontalMovement) > 0.01f);
+        // Set animator parameters for blend trees
+        _animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+        _animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        _animator.SetBool("isJumping", !isGrounded);
+        _animator.SetBool("isRunning", Mathf.Abs(horizontalMovement) > 0.01f);
+
+
+        // Cancel attack if airborne
+        if (_animator.GetBool("isAttacking") && !isGrounded)
+        {
+            _animator.SetBool("isAttacking", false);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -54,6 +61,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded && !_animator.GetBool("isAttacking"))
+        {
+        _animator.SetBool("isAttacking", true);
+        }
+    }
+
+    public void endAttack()
+    {
+        _animator.SetBool("isAttacking", false);
+    }
+
     void FixedUpdate()
     {
         if (horizontalMovement > 0 && !facingRight)
@@ -75,4 +95,5 @@ public class PlayerController : MonoBehaviour
 
         facingRight = !facingRight;
     }
+
 }
