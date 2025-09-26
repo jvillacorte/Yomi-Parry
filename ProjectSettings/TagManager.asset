@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -59,11 +61,11 @@ TagManager:
   - name: Player
     uniqueID: 1088266697
     locked: 0
+  - name: Enemy
+    uniqueID: 2134467317
+    locked: 0
   - name: 4Foreground
     uniqueID: 3733796823
-    locked: 0
-  - name: 
-    uniqueID: 2134467317
     locked: 0
   - name: Foreground
     uniqueID: 11958263
